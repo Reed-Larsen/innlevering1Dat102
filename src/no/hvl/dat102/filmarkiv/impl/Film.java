@@ -10,7 +10,19 @@ public class Film {
     private Sjanger sjanger;
     private String filmselskap;
 
-    //Konstruktør for Film
+
+//Konstruktør uten data
+    Film(){
+        this.filmnr = 0;
+        this.filmselskap = "";
+        this.tittel = "";
+        this.lansering = 0;
+        this.sjanger = Sjanger.DRAMA;
+        this.filmskaper = "";
+    }
+
+
+    //Konstruktør for Film med data
     Film(int filmnr, String filmselskap, String tittel , int lansering , Sjanger sjanger, String filmskaper){
         this.filmnr = filmnr;
         this.filmselskap = filmselskap;
