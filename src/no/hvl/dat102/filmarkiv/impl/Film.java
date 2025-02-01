@@ -1,5 +1,7 @@
 package no.hvl.dat102.filmarkiv.impl;
 
+import java.util.Objects;
+
 public class Film {
     private int filmnr;
     private String filmskaper;
@@ -75,4 +77,8 @@ public class Film {
 
         return filmnr == annenFilm.filmnr;
     }
+@Override
+public int hashCode(){
+        return Objects.hash(filmnr);
+}
 }
