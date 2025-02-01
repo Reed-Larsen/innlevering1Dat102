@@ -67,6 +67,12 @@ public class Film {
         this.filmselskap = filmselskap;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Film annenFilm = (Film) obj;
 
-
+        return filmnr == annenFilm.filmnr;
+    }
 }
