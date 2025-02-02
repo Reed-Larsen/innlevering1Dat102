@@ -2,7 +2,7 @@ package no.hvl.dat102.filmarkiv.impl;
 
 public class LinearNode<T> {
     private T data; //Dataen lagres i noden
-    private LinearNode<T> neste; //Referanse til neste node.
+    public LinearNode<T> neste; //Referanse til neste node.
 
     //Konstruktør
     public LinearNode(T data) {
