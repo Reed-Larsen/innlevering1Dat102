@@ -12,7 +12,7 @@ class FilmarkivTest {
         arkiv = new Filmarkiv(5);
         arkiv.leggTilFilm(new Film(1, "Warner Bros", "Inception", 2010, Sjanger.SCIENCE_FICTION, "Christopher Nolan"));
         arkiv.leggTilFilm(new Film(2, "Paramount", "Titanic", 1997, Sjanger.ROMANTIKK, "James Cameron"));
-        arkiv.leggTilFilm(new Film(3, "Paramount ", "The Godfather", 1972, Sjanger.DRAMA, "Francis Ford Coppola"));
+        arkiv.leggTilFilm(new Film(3, "Paramount", "The Godfather", 1972, Sjanger.DRAMA, "Francis Ford Coppola"));
     }
 
     @Test
@@ -45,8 +45,8 @@ class FilmarkivTest {
 
     @Test
     void testSoekProdusent() {
-        Film[] treff = arkiv.soekProdusent("Paramount");
-        assertEquals(2, treff.length); // Titanic og The Godfather
+        Film[] treff = arkiv.soekProdusent("James Cameron");
+        assertEquals(1, treff.length); // Titanic
     }
 
     @Test

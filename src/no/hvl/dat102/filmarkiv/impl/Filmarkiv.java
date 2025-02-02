@@ -69,7 +69,7 @@ public class Filmarkiv implements FilmarkivADT {
         Film[] treff = new Film[antall];
         int antallTreff = 0;
         for (int i = 0; i < antall; i++) {
-            if (filmer[i].getFilmskaper().toLowerCase().contains(delstreng.toLowerCase())){
+            if (filmer[i].getFilmskaper().trim().toLowerCase().contains(delstreng.toLowerCase())){
                 treff[antallTreff++] = filmer[i];
             }
         }
