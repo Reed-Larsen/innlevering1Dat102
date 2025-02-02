@@ -19,5 +19,45 @@ class FilmarkivTest {
     void finnFilm() {
         Film film = arkiv.finnFilm(1);
         assertNotNull(film);
-        assertEquals("Inception", film.getTittel());}
+        assertEquals("Inception", film.getTittel());
+    }
+
+    @Test
+    void testLeggTilFilm() {
+        assertEquals(3, arkiv.antall());
+        arkiv.leggTilFilm(new Film(4, "Interstellar", "Christopher Nolan", 2014, Sjanger.SCIENCE_FICTION, "Warner Bros"));
+        assertEquals(4, arkiv.antall());
+    }
+
+    @Test
+    void testSlettFilm() {
+        assertTrue(arkiv.slettFilm(2)); // Sletter Titanic
+        assertEquals(2, arkiv.antall());
+        assertNull(arkiv.finnFilm(2)); // Sjekker at filmen ikke finnes lenger
+    }
+
+    @Test
+    void testSoekTittel() {
+        Film[] treff = arkiv.soekTittel("God");
+        assertEquals(1, treff.length);
+        assertEquals("The Godfather", treff[0].getTittel());
+    }
+
+    @Test
+    void testSoekProdusent() {
+        Film[] treff = arkiv.soekProdusent("Paramount");
+        assertEquals(2, treff.length); // Titanic og The Godfather
+    }
+
+    @Test
+    void testAntallPerSjanger() {
+        assertEquals(1, arkiv.antall(Sjanger.ROMANTIKK));
+        assertEquals(1, arkiv.antall(Sjanger.DRAMA));
+        assertEquals(1, arkiv.antall(Sjanger.SCIENCE_FICTION));
+    }
+
+    @Test
+    void testAntallTotalt() {
+        assertEquals(3, arkiv.antall());
+    }
 }
