@@ -61,18 +61,36 @@ public class Tekstgrensesnitt {
     }
 
     public void skrivUtFilmDelstrengTittel(FilmarkivADT arkiv, String delstreng){
-        //TODO Skal skrive ut alle filmer med en
-        //TODO spesiell delstreng i tittelen
+        Film[] treff = arkiv.soekTittel(delstreng);
+        if(treff.length > 0){
+            System.out.println("Filmer med \"" + delstreng + "\" i tittelen: ");
+            for(Film f : treff){
+                skrivUtFilm(f);
+                 }
+            }else{
+            System.out.println("Ingen filmer med \"" + delstreng + "\" i tittelen ble funnet.");
+
+        }
     }
 
-    public void skrivUtFilmProdusent(FilmarkivADT akriv, String delstreng){
-        //TODO Skal skrive ut alle filmer av en
-        //TODO produsent (Produsent er delstreng)
+    public void skrivUtFilmProdusent(FilmarkivADT arkiv, String delstreng){
+        Film[] treff = arkiv.soekProdusent(delstreng);
+        if(treff.length > 0){
+            System.out.println("Filmer med \"" + delstreng + "\" i filmprodusenten: ");
+            for(Film f : treff){
+                skrivUtFilm(f);
+            }
+        }else{
+            System.out.println("Ingen filmer med \"" + delstreng + "\" i filmprodusenten ble funnet.");
+        }
     }
 
     public void skrivUtStatistikk(FilmarkivADT arkiv){
-        //TODO Skal skrive ut en enkel statistikk som
-        //TODO inneholder antall filmer totalt
-        //TODO og hvor mange det er i hver sjanger
+
+        System.out.println("Antall filmer totalt: " + arkiv.antall());
+
+        for (Sjanger sjanger : Sjanger.values()){
+            System.out.println("Antall filmer i sjangeren " + sjanger + ": " + arkiv.antall(sjanger));
+        }
     }
 }
