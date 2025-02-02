@@ -1,6 +1,7 @@
 package no.hvl.dat102.filmarkiv.klien;
 
 import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
+import no.hvl.dat102.filmarkiv.klien.Tekstgrensesnitt;
 
 public class Meny {
 

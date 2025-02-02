@@ -1,4 +1,7 @@
-package no.hvl.dat102.filmarkiv.impl;
+package no.hvl.dat102.filmarkiv.impl;//package no.hvl.dat102.filmarkiv.impl;
+
+
+import no.hvl.dat102.filmarkiv.impl.Sjanger;
 
 import java.util.Objects;
 
