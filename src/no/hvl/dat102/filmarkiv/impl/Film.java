@@ -26,7 +26,7 @@ public class Film {
 
 
     //Konstruktør for Film med data
-    Film(int filmnr, String filmselskap, String tittel , int lansering , Sjanger sjanger, String filmskaper){
+    public Film(int filmnr, String filmselskap, String tittel, int lansering, Sjanger sjanger, String filmskaper){
         this.filmnr = filmnr;
         this.filmselskap = filmselskap;
         this.tittel = tittel;
